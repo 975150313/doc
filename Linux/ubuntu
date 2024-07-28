@@ -1,3 +1,29 @@
+账号添加管理员权限 
+usermod -aG sudo username
+
+sudo免密码
+sudo visudo
+
+username ALL=(ALL) NOPASSWD: ALL
+
+修改环境变量 这是两条
+sudo nano ~/.bashrc
+sudo nano /etc/profile
+使环境变量生效这是两条
+source ~/.bashrc
+source /etc/profile
+
+例如 添加QT到环境变量
+sudo nano ~/.bashrc 
+
+export QTDIR=/opt/Library/Qt/5.15.2/arm64
+export PATH=$QTDIR/bin:$PATH
+export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+
+source ~/.bashrc
+
+
+
 查看系统内核版本
 uname -a
 cat /proc/version
